@@ -184,9 +184,9 @@ public class CustomList {
             this.list[maxIndex] = change;
 
             swap(maxIndex, this.list.length - i - 1);
-            }
-            System.out.println();
         }
+        System.out.println();
+    }
 
 
     public void swap(int number, int index) {
@@ -198,7 +198,23 @@ public class CustomList {
             System.out.println(" ");
         }
     }
+
+    public boolean bubbleSort(boolean desc) {
+        for (int i = 0; i < this.list.length; i++) {
+            for (int j = 0; j < this.list.length - 1 - i; j++) {
+                boolean Sw = desc ? this.list[j] < this.list[j + 1] : this.list[j] > this.list[j + 1];
+
+                if (Sw) {
+                    swap(j, j + 1);
+                }
+            }
+        }
+        return desc;
+    }
 }
+
+
+
 
 
 
