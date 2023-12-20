@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class CustomList {
-    private int[] list;
+    int[] list;
 
     public CustomList(int[] array) {
         this.list = array;
@@ -183,15 +183,22 @@ public class CustomList {
             this.list[Index1] = max;
             this.list[maxIndex] = change;
 
-            System.out.printf(" %d: ", i + 1);
-            for (int j = 0; j < this.list.length; j++) {
-            System.out.printf("%d ", this.list[j]);
+            swap(maxIndex, this.list.length - i - 1);
             }
             System.out.println();
         }
+
+
+    public void swap(int number, int index) {
+        if (number >= 0 && number < this.list.length && index >= 0 && index < this.list.length) {
+            int temp = this.list[number];
+            this.list[number] = this.list[index];
+            this.list[index] = temp;
+        } else {
+            System.out.println(" ");
+        }
     }
 }
-
 
 
 
