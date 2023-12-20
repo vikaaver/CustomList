@@ -171,21 +171,25 @@ public class CustomList {
     public void selectionSort() {
         for (int i = 0; i < this.list.length; i++) {
             int max = this.list[0];
-            int maxIndex=0;
+            int maxIndex = 0;
             for (int j = 0; j < this.list.length - i; j++) {
                 if (this.list[j] > max) {
                     max = this.list[j];
-                    maxIndex=j;
-
+                    maxIndex = j;
                 }
-                    System.out.printf("%d ", this.list[j]);
-
-                }
-                System.out.printf("max: %d %d%n", max, maxIndex);
             }
+            int Index1 = this.list.length - i - 1;
+            int change = this.list[Index1];
+            this.list[Index1] = max;
+            this.list[maxIndex] = change;
 
+            System.out.printf(" %d: ", i + 1);
+            for (int j = 0; j < this.list.length; j++) {
+            System.out.printf("%d ", this.list[j]);
+            }
+            System.out.println();
+        }
     }
-
 }
 
 
